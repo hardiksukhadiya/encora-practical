@@ -1,0 +1,224 @@
+{
+    "paths": {
+        "/notes/": {
+            "get": {
+                "tags": [
+                    "UserNotes"
+                ],
+                "description": "Get all user notes with pagination",
+                "parameters": [
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "description": "Sortby column",
+                        "type": "string"
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "Sort order i.e. asc or desc",
+                        "type": "string"
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "Page size",
+                        "type": "number"
+                    },
+                    {
+                        "name": "pageNumber",
+                        "in": "query",
+                        "description": "Page number",
+                        "type": "number"
+                    },
+                    {
+                        "name": "Authorization",
+                        "required": true,
+                        "in": "header",
+                        "description": "Bearer {{token}}",
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note got successful"
+                    }
+                }
+            }
+        },
+        "/notes/create": {
+            "post": {
+                "tags": [
+                    "UserNotes"
+                ],
+                "description": "UserNotes",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Create Note",
+                        "schema": {
+                            "$ref": "#/definitions/Create"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "required": true,
+                        "in": "header",
+                        "description": "Bearer {{token}}",
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note created successful",
+                        "schema": {
+                            "$ref": "#/definitions/Create"
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/{id}": {
+            "put": {
+                "tags": [
+                    "UserNotes"
+                ],
+                "description": "UserNotes",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of UserNote"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Note Update",
+                        "schema": {
+                            "$ref": "#/definitions/Update"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "required": true,
+                        "in": "header",
+                        "description": "Bearer {{token}}",
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note updated successful",
+                        "schema": {
+                            "$ref": "#/definitions/Update"
+                        }
+                    }
+                }
+            }
+        },
+        "/notes/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "UserNotes"
+                ],
+                "description": "UserNotes",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of UserNote"
+                    },
+                    {
+                        "name": "Authorization",
+                        "required": true,
+                        "in": "header",
+                        "description": "Bearer {{token}}",
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note deleted successfully"
+                    }
+                }
+            }
+        },
+        "/notes/get/{id}": {
+            "get": {
+                "tags": [
+                    "UserNotes"
+                ],
+                "description": "UserNotes",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of UserNote"
+                    },
+                    {
+                        "name": "Authorization",
+                        "required": true,
+                        "in": "header",
+                        "description": "Bearer {{token}}",
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Note got successful"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Create": {
+            "required": [
+                "title",
+                "description"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "example": "Note Title"
+                },
+                "description": {
+                    "type": "string",
+                    "example": "Note description"
+                }
+            }
+        },
+        "Update": {
+            "required": [
+                "title",
+                "description"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "example": "Note Title"
+                },
+                "description": {
+                    "type": "string",
+                    "example": "Note description"
+                }
+            }
+        }
+    }
+}

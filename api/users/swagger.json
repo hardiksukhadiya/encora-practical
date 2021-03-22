@@ -1,0 +1,112 @@
+{
+    "paths": {
+        "/users/register": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Register",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Register",
+                        "schema": {
+                            "$ref": "#/definitions/Register"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Registration successful",
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/authenticate": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "User Login",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "User Login",
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login successfully",
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                }
+            }
+        }
+       
+    },
+    "definitions": {
+        "Register": {
+            "required": [
+                "email",
+                "firstname",
+                "lastname",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "json@grr.la",
+                    "uniqueItems": true
+                },
+                "password": {
+                    "type": "string",
+                    "example": "Test@1234",
+                    "uniqueItems": true
+                },
+                "lastname": {
+                    "example": "Json",
+                    "type": "string"
+                },
+                "firstname": {
+                    "example": "Shroff",
+                    "type": "string"
+                }
+               
+            }
+        },
+        "Login": {
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "json@grr.la",
+                    "uniqueItems": true
+                },
+                "password": {
+                    "type": "string",
+                    "example": "Test@1234",
+                    "uniqueItems": true
+                }
+            }
+        }
+    }
+}
