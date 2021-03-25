@@ -1,9 +1,9 @@
 # Encora Practical
 
 APIs included
-SignUp
-Authentication and Authorization
-CRUD of Note By a user
+SignUp,
+Authentication and Authorization,
+CRUD of Note by a user
 
 ## Prerequisite (Development)
 
