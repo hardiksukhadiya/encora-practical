@@ -1,8 +1,11 @@
-# Encora Practical
+# nodejs-mysql-signup-crud-api
 
-APIs included
+Included below APIs
+
 SignUp,
+
 Authentication and Authorization,
+
 CRUD of Note by a user
 
 ## Prerequisite (Development)
