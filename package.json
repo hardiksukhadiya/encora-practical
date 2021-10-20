@@ -1,5 +1,5 @@
 {
-  "name": "encora-practical",
+  "name": "Boilerplate",
   "version": "1.0.0",
   "description": "Sign up, sign in and CRUD APIs for Notes",
   "main": "index.js",
