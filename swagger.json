@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "Encora Practical",
+        "title": "Boilerplate APIs",
         "description": "Nodejs APIs for SignUp, SignIn and CRUD for Notes by user",
         "license": {
             "name": "MIT",
